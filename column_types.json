@@ -1,1 +1,92 @@
-{"key": ["customerID"], "numerical": ["Tenure", "TotalCharges", "MonthlyCharges", "NumServices", "AverageCharges"], "categorical": ["PaymentMethod", "Contract", "TenureContract"], "ordinal": [{"TenureBucket": ["<1 year", "1-2 years", "2-3 years", "3-4 years", "4-5 years", "5+ years"]}], "boolean": ["SeniorCitizen", "PaperlessBilling", "Dependents", "Churn", "MultipleLines", "OnlineSecurity", "Male", "OnlineBackup", "TechSupport", "StreamingTV", "StreamingMovies", "DeviceProtection", "InternetService", "PhoneService", "Partner"], "demographic": ["SeniorCitizen", "PaperlessBilling", "Dependents", "Churn", "Male", "Partner"], "service": ["OnlineBackup", "OnlineSecurity", "TechSupport", "StreamingTV", "StreamingMovies", "DeviceProtection", "InternetService", "PhoneService", "MultipleLines"]}
+{
+    "key": [
+        "customerID"
+    ],
+    "numerical": [
+        "Tenure",
+        "TotalCharges",
+        "MonthlyCharges",
+        "NumServices",
+        "AverageCharges",
+        "CostPerService",
+        "ServiceRatio",
+        "PricePerTenureMonth",
+        "TenureMonthlyCharge",
+        "TenureNumServices"
+    ],
+    "categorical": [
+        "PaymentMethod"
+    ],
+    "ordinal": {
+        "Contract": [
+            "Month-to-month",
+            "One year",
+            "Two year"
+        ],
+        "TenureBucket": [
+            "<1 year",
+            "1-2 years",
+            "2-3 years",
+            "3-4 years",
+            "4-5 years",
+            "5+ years"
+        ],
+        "TenureContract": [
+            "<1 yearMonth-to-month",
+            "<1 yearOne year",
+            "<1 yearTwo year",
+            "1-2 yearsMonth-to-month",
+            "1-2 yearsOne year",
+            "1-2 yearsTwo year",
+            "2-3 yearsMonth-to-month",
+            "2-3 yearsOne year",
+            "2-3 yearsTwo year",
+            "3-4 yearsMonth-to-month",
+            "3-4 yearsOne year",
+            "3-4 yearsTwo year",
+            "4-5 yearsMonth-to-month",
+            "4-5 yearsOne year",
+            "4-5 yearsTwo year",
+            "5+ yearsMonth-to-month",
+            "5+ yearsOne year",
+            "5+ yearsTwo year"
+        ]
+    },
+    "boolean": [
+        "SeniorCitizen",
+        "PaperlessBilling",
+        "Dependents",
+        "Churn",
+        "MultipleLines",
+        "OnlineSecurity",
+        "Male",
+        "OnlineBackup",
+        "TechSupport",
+        "StreamingTV",
+        "StreamingMovies",
+        "DeviceProtection",
+        "InternetService",
+        "PhoneService",
+        "Partner",
+        "HighPaying"
+    ],
+    "demographic": [
+        "SeniorCitizen",
+        "PaperlessBilling",
+        "Dependents",
+        "Churn",
+        "Male",
+        "Partner"
+    ],
+    "service": [
+        "OnlineBackup",
+        "OnlineSecurity",
+        "TechSupport",
+        "StreamingTV",
+        "StreamingMovies",
+        "DeviceProtection",
+        "InternetService",
+        "PhoneService",
+        "MultipleLines"
+    ]
+}

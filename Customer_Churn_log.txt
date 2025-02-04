@@ -1,10 +1,10 @@
 ----------------------------------------------------------
-LOG 17/01/2025 11:42:00
+LOG 04/02/2025 13:28:05
 ----------------------------------------------------------
 
 DATA EXPLORATION
 
-Number of features: 27
+Number of features: 31
 Number of entries: 7043
 
 Unique values for each feature:
@@ -27,55 +27,86 @@ DeviceProtection(2): [False  True]
 TechSupport(2): [False  True]
 StreamingTV(2): [False  True]
 StreamingMovies(2): [False  True]
-Contract(3): ['Month-to-month' 'One year' 'Two year']
+Contract(3): ['Month-to-month', 'One year', 'Two year']
+Categories (3, object): ['Month-to-month', 'One year', 'Two year']
 PaperlessBilling(2): [ True False]
-PaymentMethod(4): ['Electronic check' 'Mailed check' 'Bank transfer (automatic)'
- 'Credit card (automatic)']
+PaymentMethod(4): ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)']
+Categories (4, object): ['Bank transfer (automatic)', 'Credit card (automatic)', 'Electronic check',
+                         'Mailed check']
 MonthlyCharges(1585): [29.85 56.95 53.85 ... 63.1  44.2  78.7 ]
 TotalCharges(6531): [  29.85 1889.5   108.15 ...  346.45  306.6  6844.5 ]
 Churn(2): [False  True]
 NumServices(9): [2 4 6 5 7 3 1 9 8]
 AverageCharges(6639): [ 14.925       53.98571429  36.05       ...  28.87083333  61.32
  102.15671642]
-TenureBucket(6): ['<1 year' '2-3 years' '3-4 years' '1-2 years' '5+ years' '4-5 years']
-Tenure_Contract(18): ['<1 yearMonth-to-month' '2-3 yearsOne year' '3-4 yearsOne year'
- '1-2 yearsMonth-to-month' '2-3 yearsMonth-to-month' '5+ yearsOne year'
- '1-2 yearsTwo year' '4-5 yearsOne year' '4-5 yearsMonth-to-month'
- '5+ yearsTwo year' '<1 yearOne year' '4-5 yearsTwo year'
- '3-4 yearsMonth-to-month' '1-2 yearsOne year' '2-3 yearsTwo year'
- '3-4 yearsTwo year' '5+ yearsMonth-to-month' '<1 yearTwo year']
+TenureBucket(6): ['<1 year', '2-3 years', '3-4 years', '1-2 years', '5+ years', '4-5 years']
+Categories (6, object): ['1-2 years', '2-3 years', '3-4 years', '4-5 years', '5+ years', '<1 year']
+TenureContract(18): ['<1 yearMonth-to-month', '2-3 yearsOne year', '3-4 yearsOne year', '1-2 yearsMonth-to-month', '2-3 yearsMonth-to-month', ..., '1-2 yearsOne year', '2-3 yearsTwo year', '3-4 yearsTwo year', '5+ yearsMonth-to-month', '<1 yearTwo year']
+Length: 18
+Categories (18, object): ['1-2 yearsMonth-to-month', '1-2 yearsOne year', '1-2 yearsTwo year',
+                          '2-3 yearsMonth-to-month', ..., '5+ yearsTwo year', '<1 yearMonth-to-month',
+                          '<1 yearOne year', '<1 yearTwo year']
 HighPaying(2): [False  True]
 CostPerService(6585): [ 4.975      10.79714286  7.21       ...  9.62361111 15.33
  12.76958955]
+ServiceRatio(9): [0.22222222 0.44444444 0.66666667 0.55555556 0.77777778 0.33333333
+ 0.11111111 1.         0.88888889]
+PricePerTenureMonth(6348): [  0.          52.35857143  18.1        ...  26.40416667  46.44
+ 100.57985075]
+TenureMonthlyCharge(6018): [  29.85 1936.3   107.7  ... 7430.4   325.6  6972.9 ]
+TenureNumServices(327): [  2 136   8 180   4  48 110  20 196 248  39  16 348 343 175 621  52 497
+  40 105   3  12   1 290 245 120 282 648  68  10 162 504 138 238  66  30
+ 420  17  91   6 364 414 215  90 150  32 378 528 300 288  72  45  18 188
+ 217  50 512 124  15 448  44  21 294  49  54 140  46  58 520 426   5 228
+ 264 544  64 330 260 111 320  60  41 135 336   9 165 108 144 355 201  86
+  69  57 366 142 455  35 560 496  42  88  22  80 371  11 232  14  98 265
+  61 198  13 160 258 576  59 472  56 132 432 133  29  92 342 360 396  24
+  96 376  55 246 390 205 306 256 402 549 450 116 285 155 405 100  25  70
+ 272 115 213 210 240 408 152 104 174 387  71 266  27 276 476 301 612 441
+ 128 639  63 384 222  34  28 252  47  33 392 185 344  85 275 220 216  19
+ 594 102  23  87 490 203 340  36 486  84 122 168 192   0 305 284 350 552
+ 427 280 112  81 469 204 345 156 354 235 224 186 255  65 368 153 352 462
+ 372   7 125 184 200 129 315  37  53 106 208 325 189 230 225  75 123 170
+  78 568 406 385 329 400  76  26 416 236 270 536 147 148  95 434 117  74
+ 480 369 273  77 322 259 310 558 126 318 630 234  31 177 244 145 335 312
+ 328 483 287 176  51  67 324  94 130 134 250 464 190 171 207  38  82 424
+ 154 357 456 413  99 308 567 183 268 231  62 172 295  93 585 195 488 114
+ 212 304  43 399 603 440 531 161 423 141 164 468 182 119 540 118 296 495
+ 159 333 513]
 
 Datatype for each feature:
-customerID           object
-Male                   bool
-SeniorCitizen          bool
-Partner                bool
-Dependents             bool
-Tenure                int64
-PhoneService           bool
-MultipleLines          bool
-InternetService        bool
-OnlineSecurity         bool
-OnlineBackup           bool
-DeviceProtection       bool
-TechSupport            bool
-StreamingTV            bool
-StreamingMovies        bool
-Contract             object
-PaperlessBilling       bool
-PaymentMethod        object
-MonthlyCharges      float64
-TotalCharges        float64
-Churn                  bool
-NumServices           int64
-AverageCharges      float64
-TenureBucket         object
-Tenure_Contract      object
-HighPaying             bool
-CostPerService      float64
+
+customerID               object
+Male                       bool
+SeniorCitizen              bool
+Partner                    bool
+Dependents                 bool
+Tenure                    int64
+PhoneService               bool
+MultipleLines              bool
+InternetService            bool
+OnlineSecurity             bool
+OnlineBackup               bool
+DeviceProtection           bool
+TechSupport                bool
+StreamingTV                bool
+StreamingMovies            bool
+Contract               category
+PaperlessBilling           bool
+PaymentMethod          category
+MonthlyCharges          float64
+TotalCharges            float64
+Churn                      bool
+NumServices               int64
+AverageCharges          float64
+TenureBucket           category
+TenureContract         category
+HighPaying                 bool
+CostPerService          float64
+ServiceRatio            float64
+PricePerTenureMonth     float64
+TenureMonthlyCharge     float64
+TenureNumServices         int64
 dtype: object
 
 Ratios for boolean features:
@@ -94,79 +125,339 @@ DeviceProtection: 0.34
 InternetService: 0.78
 PhoneService: 0.9
 Partner: 0.48
+HighPaying: 0.5
 
 Metrics of numerical features:
-            Tenure  MonthlyCharges  TotalCharges  NumServices  AverageCharges  \
-count  7043.000000     7043.000000   7043.000000  7043.000000     7043.000000   
-mean     32.371149       64.761692   2279.734304     4.146244       58.990789   
-std      24.559481       30.090047   2266.794470     2.312720       30.579745   
-min       0.000000       18.250000      0.000000     1.000000        0.000000   
-25%       9.000000       35.500000    398.550000     2.000000       26.041493   
-50%      29.000000       70.350000   1394.550000     4.000000       60.937879   
-75%      55.000000       89.850000   3786.600000     6.000000       84.830742   
-max      72.000000      118.750000   8684.800000     9.000000      118.969863   
 
-       CostPerService  
-count     7043.000000  
-mean        11.194585  
-std          3.243147  
-min          0.000000  
-25%          9.008333  
-50%         10.464583  
-75%         13.282022  
-max         24.450000  
+count    7043.000000
+mean       32.371149
+std        24.559481
+min         0.000000
+25%         9.000000
+50%        29.000000
+75%        55.000000
+max        72.000000
+Name: Tenure, dtype: float64
+
+count    7043.000000
+mean     2279.734304
+std      2266.794470
+min         0.000000
+25%       398.550000
+50%      1394.550000
+75%      3786.600000
+max      8684.800000
+Name: TotalCharges, dtype: float64
+
+count    7043.000000
+mean       64.761692
+std        30.090047
+min        18.250000
+25%        35.500000
+50%        70.350000
+75%        89.850000
+max       118.750000
+Name: MonthlyCharges, dtype: float64
+
+count    7043.000000
+mean        4.146244
+std         2.312720
+min         1.000000
+25%         2.000000
+50%         4.000000
+75%         6.000000
+max         9.000000
+Name: NumServices, dtype: float64
+
+count    7043.000000
+mean       58.990789
+std        30.579745
+min         0.000000
+25%        26.041493
+50%        60.937879
+75%        84.830742
+max       118.969863
+Name: AverageCharges, dtype: float64
+
+count    7043.000000
+mean       11.194585
+std         3.243147
+min         0.000000
+25%         9.008333
+50%        10.464583
+75%        13.282022
+max        24.450000
+Name: CostPerService, dtype: float64
+
+count    7043.000000
+mean        0.460694
+std         0.256969
+min         0.111111
+25%         0.222222
+50%         0.444444
+75%         0.666667
+max         1.000000
+Name: ServiceRatio, dtype: float64
+
+count    7043.000000
+mean       53.220144
+std        33.354206
+min       -80.850000
+25%        20.609973
+50%        55.688235
+75%        81.753840
+max       117.356164
+Name: PricePerTenureMonth, dtype: float64
+
+count    7043.000000
+mean     2279.581350
+std      2264.729447
+min         0.000000
+25%       394.000000
+50%      1393.600000
+75%      3786.100000
+max      8550.000000
+Name: TenureMonthlyCharge, dtype: float64
+
+count    7043.000000
+mean      161.126509
+std       175.269171
+min         0.000000
+25%        21.000000
+50%        85.000000
+75%       268.000000
+max       648.000000
+Name: TenureNumServices, dtype: float64
 
 
 The five first entries of each feature:
-   customerID   Male  SeniorCitizen  Partner  Dependents  Tenure  \
-0  7590-VHVEG  False          False     True       False       1   
-1  5575-GNVDE   True          False    False       False      34   
-2  3668-QPYBK   True          False    False       False       2   
-3  7795-CFOCW   True          False    False       False      45   
-4  9237-HQITU  False          False    False       False       2   
 
-   PhoneService  MultipleLines  InternetService  OnlineSecurity  OnlineBackup  \
-0         False          False             True           False          True   
-1          True          False             True            True         False   
-2          True          False             True            True          True   
-3         False          False             True            True         False   
-4          True          False             True           False         False   
+0    7590-VHVEG
+1    5575-GNVDE
+2    3668-QPYBK
+3    7795-CFOCW
+4    9237-HQITU
+Name: customerID, dtype: object
 
-   DeviceProtection  TechSupport  StreamingTV  StreamingMovies  \
-0             False        False        False            False   
-1              True        False        False            False   
-2             False        False        False            False   
-3              True         True        False            False   
-4             False        False        False            False   
+0    False
+1     True
+2     True
+3     True
+4    False
+Name: Male, dtype: bool
 
-         Contract  PaperlessBilling              PaymentMethod  \
-0  Month-to-month              True           Electronic check   
-1        One year             False               Mailed check   
-2  Month-to-month              True               Mailed check   
-3        One year             False  Bank transfer (automatic)   
-4  Month-to-month              True           Electronic check   
+0    False
+1    False
+2    False
+3    False
+4    False
+Name: SeniorCitizen, dtype: bool
 
-   MonthlyCharges  TotalCharges  Churn  NumServices  AverageCharges  \
-0           29.85         29.85  False            2       14.925000   
-1           56.95       1889.50  False            4       53.985714   
-2           53.85        108.15   True            4       36.050000   
-3           42.30       1840.75  False            4       40.016304   
-4           70.70        151.65   True            2       50.550000   
+0     True
+1    False
+2    False
+3    False
+4    False
+Name: Partner, dtype: bool
 
-  TenureBucket        Tenure_Contract  HighPaying  CostPerService  
-0      <1 year  <1 yearMonth-to-month       False        4.975000  
-1    2-3 years      2-3 yearsOne year       False       10.797143  
-2      <1 year  <1 yearMonth-to-month       False        7.210000  
-3    3-4 years      3-4 yearsOne year       False        8.003261  
-4      <1 year  <1 yearMonth-to-month        True       16.850000  
+0    False
+1    False
+2    False
+3    False
+4    False
+Name: Dependents, dtype: bool
 
-----------------------------------------------------------
-LOG 28/01/2025 17:45:46
-----------------------------------------------------------
+0     1
+1    34
+2     2
+3    45
+4     2
+Name: Tenure, dtype: int64
+
+0    False
+1     True
+2     True
+3    False
+4     True
+Name: PhoneService, dtype: bool
+
+0    False
+1    False
+2    False
+3    False
+4    False
+Name: MultipleLines, dtype: bool
+
+0    True
+1    True
+2    True
+3    True
+4    True
+Name: InternetService, dtype: bool
+
+0    False
+1     True
+2     True
+3     True
+4    False
+Name: OnlineSecurity, dtype: bool
+
+0     True
+1    False
+2     True
+3    False
+4    False
+Name: OnlineBackup, dtype: bool
+
+0    False
+1     True
+2    False
+3     True
+4    False
+Name: DeviceProtection, dtype: bool
+
+0    False
+1    False
+2    False
+3     True
+4    False
+Name: TechSupport, dtype: bool
+
+0    False
+1    False
+2    False
+3    False
+4    False
+Name: StreamingTV, dtype: bool
+
+0    False
+1    False
+2    False
+3    False
+4    False
+Name: StreamingMovies, dtype: bool
+
+0    Month-to-month
+1          One year
+2    Month-to-month
+3          One year
+4    Month-to-month
+Name: Contract, dtype: category
+Categories (3, object): ['Month-to-month', 'One year', 'Two year']
+
+0     True
+1    False
+2     True
+3    False
+4     True
+Name: PaperlessBilling, dtype: bool
+
+0             Electronic check
+1                 Mailed check
+2                 Mailed check
+3    Bank transfer (automatic)
+4             Electronic check
+Name: PaymentMethod, dtype: category
+Categories (4, object): ['Bank transfer (automatic)', 'Credit card (automatic)', 'Electronic check',
+                         'Mailed check']
+
+0    29.85
+1    56.95
+2    53.85
+3    42.30
+4    70.70
+Name: MonthlyCharges, dtype: float64
+
+0      29.85
+1    1889.50
+2     108.15
+3    1840.75
+4     151.65
+Name: TotalCharges, dtype: float64
+
+0    False
+1    False
+2     True
+3    False
+4     True
+Name: Churn, dtype: bool
+
+0    2
+1    4
+2    4
+3    4
+4    2
+Name: NumServices, dtype: int64
+
+0    14.925000
+1    53.985714
+2    36.050000
+3    40.016304
+4    50.550000
+Name: AverageCharges, dtype: float64
+
+0      <1 year
+1    2-3 years
+2      <1 year
+3    3-4 years
+4      <1 year
+Name: TenureBucket, dtype: category
+Categories (6, object): ['1-2 years', '2-3 years', '3-4 years', '4-5 years', '5+ years', '<1 year']
+
+0    <1 yearMonth-to-month
+1        2-3 yearsOne year
+2    <1 yearMonth-to-month
+3        3-4 yearsOne year
+4    <1 yearMonth-to-month
+Name: TenureContract, dtype: category
+Categories (18, object): ['1-2 yearsMonth-to-month', '1-2 yearsOne year', '1-2 yearsTwo year',
+                          '2-3 yearsMonth-to-month', ..., '5+ yearsTwo year', '<1 yearMonth-to-month',
+                          '<1 yearOne year', '<1 yearTwo year']
+
+0    False
+1    False
+2    False
+3    False
+4     True
+Name: HighPaying, dtype: bool
+
+0     4.975000
+1    10.797143
+2     7.210000
+3     8.003261
+4    16.850000
+Name: CostPerService, dtype: float64
+
+0    0.222222
+1    0.444444
+2    0.444444
+3    0.444444
+4    0.222222
+Name: ServiceRatio, dtype: float64
+
+0     0.000000
+1    52.358571
+2    18.100000
+3    39.096739
+4    26.983333
+Name: PricePerTenureMonth, dtype: float64
+
+0      29.85
+1    1936.30
+2     107.70
+3    1903.50
+4     141.40
+Name: TenureMonthlyCharge, dtype: float64
+
+0      2
+1    136
+2      8
+3    180
+4      4
+Name: TenureNumServices, dtype: int64
 
 
 FEATURE EXPLORATION
-
 
 Average tenure of churned and non-churned costumers:
    Churn     Tenure
@@ -191,12 +482,14 @@ Churn by high paying customers:
 0       False  0.179138
 1        True  0.351920
 
-Correlation Matrix:
-                AverageCharges    Tenure  NumServices     Churn
-AverageCharges        1.000000  0.414352     0.878377  0.072579
-Tenure                0.414352  1.000000     0.473803 -0.352229
-NumServices           0.878377  0.473803     1.000000 -0.019375
-Churn                 0.072579 -0.352229    -0.019375  1.000000
+Churn by tenure bucket:
+  TenureBucket     Churn
+0    1-2 years  0.287109
+1    2-3 years  0.216346
+2    3-4 years  0.190289
+3    4-5 years  0.144231
+4     5+ years  0.066098
+5      <1 year  0.474382
 
 Churn by Payment Method and Contract:
 Contract                   Month-to-month  One year  Two year
@@ -205,4 +498,111 @@ Bank transfer (automatic)        0.341256  0.097187  0.033688
 Credit card (automatic)          0.327808  0.103015  0.022375
 Electronic check                 0.537297  0.184438  0.077381
 Mailed check                     0.315789  0.068249  0.007853
+
+Correlation Matrix:
+                       Tenure  ...  TenureNumServices
+Tenure               1.000000  ...           0.821904
+TotalCharges         0.826178  ...           0.963231
+MonthlyCharges       0.247900  ...           0.584930
+NumServices          0.473803  ...           0.811943
+AverageCharges       0.414352  ...           0.692394
+CostPerService       0.070550  ...           0.086214
+ServiceRatio         0.473803  ...           0.811943
+PricePerTenureMonth  0.535935  ...           0.741407
+TenureMonthlyCharge  0.826568  ...           0.963569
+TenureNumServices    0.821904  ...           1.000000
+
+[10 rows x 10 columns]
+
+MODEL TRAINING
+
+FEATURES: Male, SeniorCitizen, Partner, Dependents, Tenure, PhoneService, MultipleLines, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, StreamingMovies, Contract, PaperlessBilling, PaymentMethod, MonthlyCharges, NumServices, TenureBucket, HighPaying
+TARGET: Churn
+
+MODEL: RANDOM FOREST
+
+Cross-validation Results:
+Individual fold scores: [0.77430802 0.75798439 0.76721079 0.76988636 0.7578125 ]
+Mean CV score: 0.765
+Std CV score: 0.007
+
+
+Model Performance Metrics:
+Accuracy: 0.77
+Precision: 0.59
+Recall: 0.47
+F1: 0.53
+
+Confusion Matrix:
+                 Predicted
+                 Neg    Pos
+Actual  Neg     915    121   
+        Pos     197    176   
+
+
+Top 5 most important features:
+          feature  importance
+1  MonthlyCharges    0.456175
+0          Tenure    0.240776
+7        Contract    0.102911
+2     NumServices    0.081302
+8    TenureBucket    0.055535
+
+MODEL: LOGISTIC REGRESSION
+
+Cross-validation Results:
+Individual fold scores: [0.80979418 0.79701916 0.78353442 0.78409091 0.79190341]
+Mean CV score: 0.793
+Std CV score: 0.010
+
+
+Model Performance Metrics:
+Accuracy: 0.81
+Precision: 0.67
+Recall: 0.55
+F1: 0.6
+
+Confusion Matrix:
+                 Predicted
+                 Neg    Pos
+Actual  Neg     936    100   
+        Pos     168    205   
+
+
+Top 5 most important features:
+          feature  importance
+0          Tenure    1.860025
+1  MonthlyCharges    1.057068
+7        Contract    0.852412
+8    TenureBucket    0.598020
+2     NumServices    0.448142
+
+MODEL: XGBOOST
+
+Cross-validation Results:
+Individual fold scores: [0.80411639 0.79488999 0.7707594  0.79190341 0.78622159]
+Mean CV score: 0.790
+Std CV score: 0.011
+
+
+Model Performance Metrics:
+Accuracy: 0.8
+Precision: 0.66
+Recall: 0.54
+F1: 0.6
+
+Confusion Matrix:
+                 Predicted
+                 Neg    Pos
+Actual  Neg     930    106   
+        Pos     170    203   
+
+
+Top 5 most important features:
+                          feature  importance
+7                        Contract    0.698846
+5  PaymentMethod_Electronic check    0.072879
+0                          Tenure    0.051875
+1                  MonthlyCharges    0.049497
+6      PaymentMethod_Mailed check    0.042045
 

@@ -95,14 +95,14 @@ class PlotBuilder:
         if self.y_label:
             self.ax.set_ylabel(self.y_label,fontsize=13)
 
-    def create_barplot(self, data, x, y):
+    def create_barplot(self, data, x, y, order=None):
         self.data = data
         self.x = x
         self.y = y
         self.type = 'barplot'
 
         self.initialize_plot()
-        sns.barplot(data=data, x=x, y=y, ax=self.ax)
+        sns.barplot(data=data, x=x, y=y, ax=self.ax, order=order)
         self.apply_customizations()
 
         return self
@@ -140,3 +140,37 @@ class PlotBuilder:
 
         return self
     
+    def create_lineplot(self, data, x, y):
+        self.data = data
+        self.x = x
+        self.y = y
+        self.type = 'lineplot'
+
+        self.initialize_plot()
+        sns.lineplot(data=data, x=x, y=y, ax=self.ax)
+        self.apply_customizations()
+
+        return self
+    
+    def create_scatterplot(self, data, x, y):
+        self.data = data
+        self.x = x
+        self.y = y
+        self.type = 'scatterplot'
+
+        self.initialize_plot()
+        sns.scatterplot(data=data, x=x, y=y, ax=self.ax)
+        self.apply_customizations()
+
+        return self
+    
+    def create_histogram(self, data, x,hue):
+        self.data = data
+        self.x = x
+        self.type = 'histogram'
+
+        self.initialize_plot()
+        sns.histplot(data=data, x=x, hue=hue, ax=self.ax,bins = 30)
+        self.apply_customizations()
+
+        return self
