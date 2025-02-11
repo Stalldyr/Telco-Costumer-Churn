@@ -28,15 +28,16 @@ This project implements a machine learning solution for predicting customer chur
 - `insights.md`: Presentations of the insights found in the data 
 - `plots/`: Directory containing generated visualizations
 
+
 ## Package Versions
-Package                       Version
------------------------------ ------------
-matplotlib                    3.9.4
-numpy                         1.24.3
-pandas                        2.0.2
-seaborn                       0.13.2
-sklearn                       0.0.post9
-xgboost                       2.1.3
+```python
+matplotlib==3.9.4
+numpy==1.24.3
+pandas==2.0.2
+seaborn==0.13.2
+sklearn==0.0.post9
+xgboost==2.1.3
+```
 
 ## Data set
 
