@@ -218,7 +218,7 @@ class Data():
                 PlotBuilder().set_title("Churn rate by high paying customers").set_rotation(40).set_limits(y_lim=(0,1)).create_barplot(high_paying_churn,"HighPaying","Churn"),
                 PlotBuilder().set_title("Churn rate by payment method and contract").create_heatmap(churn_by_payment_contract),
                 PlotBuilder().set_title("Tenure Distrubution by Churn").create_histogram(self.df[["Tenure","Churn"]], "Tenure", "Churn"),
-                PlotBuilder().set_title("Churn by Tenure Bucket").set_rotation(40).set_limits(y_lim=(0,1)).create_barplot(tenure_bucket_churn,"TenureBucket","Churn",order=self.tenure_bucket_labels),
+                PlotBuilder().set_title("Churn by Tenure Bucket").set_rotation(40).set_limits(y_lim=(0,1)).create_barplot(tenure_bucket_churn,"TenureBucket","Churn",order=self.column_types["ordinal"]['TenureBucket']),
                 PlotBuilder().set_title("Correlation Matrix").set_title("Feature Correlation Matrix").set_rotation(40).create_heatmap(corr_matrix)
             ]
 
@@ -278,10 +278,10 @@ class Data():
         self.txt_output.append('FEATURES: ' + ', '.join(features))
         self.txt_output.append('TARGET: ' + target)
 
-        test = ModelBuilder(X,y,self.column_types, random_state=random_state)
+        modelbuild = ModelBuilder(X,y,self.column_types, random_state=random_state)
         for model in models:
-            test.run_model(model)
-            self.get_model_log(test)
+            modelbuild.run_model(model)
+            self.get_model_log(modelbuild)
 
     #╔════════════════════════════════════════════════════════════════════╗
     #║                   FILE PROCESSING AND LOGGING                      ║
@@ -310,11 +310,11 @@ def main(path,save_log=False):
     target = 'Churn'
     models = [RANDOM_FOREST, LOGISTIC_REGRESSION, XGBOOST]
 
-    telco.data_exploration()
-    telco.feature_exploration()
-    telco.initialize_model_training(features,target,models)
+    #telco.data_exploration()
+    #telco.feature_exploration()
+    #telco.initialize_model_training(features,target,models)
 
-    print('\n'.join(telco.txt_output))
+    telco.feature_exploration(plot=True)
 
     #Adds insights to a logfile
     if save_log:
@@ -324,4 +324,4 @@ def main(path,save_log=False):
         
 
 if __name__ == '__main__':
-    main('Telco-Customer-Churn-new.csv',save_log = True)
+    main('Telco-Customer-Churn-new.csv',save_log = False)
